@@ -13,6 +13,9 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plugin 'junegunn/fzf.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -57,6 +60,9 @@ let g:go_debug_log_output = ''
 " vim-go error tweak
 let g:go_list_type = "quickfix"
 
+" auto-resolve imports when saving file
+let g:go_fmt_command = "goimports"
+
 " Enter automatically into the files directory
 autocmd BufEnter * silent! lcd %:p:h
 
@@ -66,7 +72,13 @@ autocmd BufEnter * silent! lcd %:p:h
 " Go
 "    Ctrl+x Ctrl+o - autocomplete
 "    Ctrl+], Crtl+[ - go to definition and back
+"    ,b - Go build
 "    ,d - Go documentation 
+"    ,s - Go Info
+"    ,q - Open file (fuzzy find)
+"    ]] - next func.
+"    [[ - prev.func.
+"
 "
 " Go Debugging
 "   ,1 - start debugging main
@@ -80,7 +92,10 @@ autocmd BufEnter * silent! lcd %:p:h
 "
 "   if you want to print variable, use the :GoDebugPring <var>
 " -------------------------------------------------------
+nnoremap <leader>q :FZF<CR>
 nnoremap <leader>d :GoDoc<CR>
+nnoremap <leader>s :GoInfo<CR>
+nnoremap <leader>b :GoBuild<CR>
 nnoremap <C-]> :GoDef<CR>
 nnoremap <C-[> :GoDefPop<CR>
 
@@ -94,11 +109,16 @@ nnoremap <leader>7 :GoDebugStep<CR>
 nnoremap <leader>8 :GoDebugStepOut<CR>
 nnoremap <leader>0 :GoDebugBreakpoint<CR>
 
-
 " on iPad you don't have ESC. As a 
 " hack, I'm using 'jj' sequence. 
 imap jj <Esc>
 
 " ',g' - enable/disable NEDRtree
+" ',d' - go to actual file in NERDTree
 map <leader>g :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
 
+
+
+" set indent for YAMLs
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
