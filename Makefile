@@ -5,6 +5,10 @@ all: sync
 install: install-$(UNAME)
 
 install-darwin:
+	brew insall neovim
+
+install-linux:
+	apt install neovim
 
 sync:
 	mkdir -p ~/.config/nvim
@@ -19,4 +23,4 @@ clean:
 	rm -f ~/.config/nvim/init.vim
 	rm -f ~/.tmux.conf
 
-.PHONY: all clean sync install install-darwin
+.PHONY: all clean sync install install-darwin install-linux
