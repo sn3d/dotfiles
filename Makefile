@@ -1,4 +1,10 @@
+UNAME := $(shell uname -s | tr A-Z a-z)
+
 all: sync
+
+install: install-$(UNAME)
+
+install-darwin:
 
 sync:
 	mkdir -p ~/.config/nvim
@@ -13,4 +19,4 @@ clean:
 	rm -f ~/.config/nvim/init.vim
 	rm -f ~/.tmux.conf
 
-.PHONY: all clean sync
+.PHONY: all clean sync install install-darwin

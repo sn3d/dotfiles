@@ -16,6 +16,7 @@ Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plugin 'junegunn/fzf.vim'
+Plugin 'hashivim/vim-terraform'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
