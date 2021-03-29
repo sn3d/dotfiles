@@ -15,10 +15,11 @@ git clone https://github.com/sn3d/dotfiles ~/dotfiles
 # make a symlinks to dotiles
 cd ~/dotfiles
 make
-
 ```
 
 You have to manually open the `vim` or `nvim` and install plugins with
 ```
 :PlugInstall
 ```
+
+Also you have to manully install tmux plugins. Run the `tmux` and press `ctrl+b` and I capital 'i'.
