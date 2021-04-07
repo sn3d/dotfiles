@@ -17,9 +17,21 @@ cd ~/dotfiles
 make
 ```
 
+### Install neovim
+
 You have to manually open the `vim` or `nvim` and install plugins with
 ```
 :PlugInstall
 ```
 
-Also you have to manully install tmux plugins. Run the `tmux` and press `ctrl+b` and I capital 'i'.
+
+### Install tmux
+Also you have to manully install tmux plugins. 
+
+```
+make install-tmux
+tmux source ~/.tmux.conf
+```
+
+Run the `tmux` and press `ctrl+b` and I capital 'i'.
+

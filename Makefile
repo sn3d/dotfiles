@@ -2,7 +2,7 @@ UNAME := $(shell uname -s | tr A-Z a-z)
 
 all: sync
 
-install: install-$(UNAME) install-tmux-tpm
+install: install-$(UNAME) install-tmux
 
 install-darwin:
 	brew insall neovim
@@ -10,7 +10,7 @@ install-darwin:
 install-linux:
 	apt install neovim
 
-install-tmux-tpm:
+install-tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 sync:
