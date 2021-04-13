@@ -17,9 +17,9 @@ cd ~/dotfiles
 make
 ```
 
-You have to manually open the `vim` or `nvim` and install plugins with
+You have to manually install vim plugins with
 ```
-:PlugInstall
+vim +PluginInstall
 ```
 
 Also you have to manully install tmux plugins. Run the `tmux` and press `ctrl+b` and I capital 'i'.

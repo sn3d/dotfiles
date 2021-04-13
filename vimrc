@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'hashivim/vim-terraform'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -45,6 +46,16 @@ set mouse=a
 let mapleader = ","
 
 " -------------------------------------------------------
+" FZF setup
+" -------------------------------------------------------
+
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
+
+" -------------------------------------------------------
 " Go setup
 " -------------------------------------------------------
 
@@ -70,6 +81,9 @@ autocmd BufEnter * silent! lcd %:p:h
 " -------------------------------------------------------
 " Shortcuts
 "
+" Basic
+"    ,q - find file (fzf)
+"
 " Go
 "    Ctrl+x Ctrl+o - autocomplete
 "    Ctrl+], Crtl+[ - go to definition and back
@@ -93,7 +107,7 @@ autocmd BufEnter * silent! lcd %:p:h
 "
 "   if you want to print variable, use the :GoDebugPring <var>
 " -------------------------------------------------------
-nnoremap <leader>q :FZF<CR>
+nnoremap <leader>q :ProjectFiles<CR>
 nnoremap <leader>d :GoDoc<CR>
 nnoremap <leader>s :GoInfo<CR>
 nnoremap <leader>b :GoBuild<CR>
@@ -119,7 +133,10 @@ imap jj <Esc>
 map <leader>g :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 
-
+let NERDTreeShowHidden=1
 
 " set indent for YAMLs
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+source $HOME/.config/nvim/plug-config/coc.vim
+
