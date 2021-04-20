@@ -14,7 +14,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call vundle#end()            " required
@@ -111,6 +112,7 @@ autocmd BufEnter * silent! lcd %:p:h
 "   if you want to print variable, use the :GoDebugPring <var>
 " -------------------------------------------------------
 nnoremap <leader>q :ProjectFiles<CR>
+nnoremap <leader>r :Ag 
 nnoremap <leader>d :GoDoc<CR>
 nnoremap <leader>s :GoInfo<CR>
 nnoremap <leader>b :GoBuild<CR>
