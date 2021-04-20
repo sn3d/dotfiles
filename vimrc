@@ -5,21 +5,21 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
-Plugin 'sn3d/sn3d.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'hashivim/vim-terraform'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#begin('~/.vim/plugged')
+Plug 'sn3d/sn3d.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'fatih/vim-go'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()            " required
+" filetype plugin indent on    " required
 
 " -------------------------------------------------------
 " Editor settings
@@ -29,6 +29,7 @@ colorscheme sn3d
 
 " Flash screen instead of beep sound
 set visualbell
+set noerrorbells
 
 " Change how vim represents characters on the screen
 set encoding=utf-8
@@ -45,6 +46,9 @@ set smartindent
 
 " Enable mouse scrolling
 set mouse=a
+
+" Cursor is always block
+set guicursor=
 
 " Set leader to ',' it's required for shortcuts
 let mapleader = ","

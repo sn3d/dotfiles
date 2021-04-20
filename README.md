@@ -20,7 +20,7 @@ make
 Install VIM plugins
 
 ```
-vim +PluginInstall
+vim +PlugInstall
 ```
 
 ### Install tmux

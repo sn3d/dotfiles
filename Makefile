@@ -15,7 +15,8 @@ install-tmux:
 
 sync:
 	mkdir -p ~/.config/nvim
-	[ -d ~/.vim/bundle/Vundle.vim ] || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#	[ -d ~/.vim/bundle/Vundle.vim ] || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/iVundle.vim
+	[ -d ~/.local/share/nvim/site/autoload ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/init.vim ~/.config/nvim/init.vim
 	[ -d ~/.config/nvim/plug-config ] || mkdir ~/.config/nvim/plug-config
 	[ -f ~/.config/nvim/plug-config/coc.vim ] || ln -s $(PWD)/coc.vim ~/.config/nvim/plug-config/coc.vim 
