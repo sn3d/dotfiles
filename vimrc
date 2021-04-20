@@ -14,8 +14,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf'
 Plugin 'hashivim/vim-terraform'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call vundle#end()            " required
@@ -37,7 +36,11 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " Set tab to 3 spaces
-set ts=3
+set tabstop=3
+set softtabstop=3
+set shiftwidth=3
+set expandtab
+set smartindent
 
 " Enable mouse scrolling
 set mouse=a
