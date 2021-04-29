@@ -62,6 +62,7 @@ function! s:find_git_root()
 endfunction
 
 command! ProjectFiles execute 'Files' s:find_git_root()
+command! GoBuildMain execute 'GoBuild' s:find_git_root()
 
 " -------------------------------------------------------
 " Go setup
@@ -92,6 +93,9 @@ autocmd BufEnter * silent! lcd %:p:h
 " Basic
 "    ,q - find file (fzf)
 "
+" Git
+"    ,bb - git blame
+"
 " Go
 "    Ctrl+x Ctrl+o - autocomplete
 "    Ctrl+], Crtl+[ - go to definition and back
@@ -115,11 +119,12 @@ autocmd BufEnter * silent! lcd %:p:h
 "
 "   if you want to print variable, use the :GoDebugPring <var>
 " -------------------------------------------------------
-nnoremap <leader>q :ProjectFiles<CR>
-nnoremap <leader>r :Ag 
-nnoremap <leader>d :GoDoc<CR>
-nnoremap <leader>s :GoInfo<CR>
-nnoremap <leader>b :GoBuild<CR>
+nnoremap <leader>q  :ProjectFiles<CR>
+nnoremap <leader>r  :Ag 
+nnoremap <leader>bb :Gblame<CR>
+nnoremap <leader>d  :GoDoc<CR>
+nnoremap <leader>s  :GoInfo<CR>
+nnoremap <leader>b  :GoBuildMain<CR>
 nnoremap <C-]> :GoDef<CR>
 nnoremap <C-[> :GoDefPop<CR>
 
