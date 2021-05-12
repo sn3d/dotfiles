@@ -5,10 +5,13 @@ all: sync
 install: install-$(UNAME) install-tmux
 
 install-darwin:
-	brew insall neovim
+	brew install neovim
+	brew install the_silver_searcher
 
 install-linux:
 	apt install neovim
+	apt install tmux
+	apt install silversearcher-ag
 
 install-tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
