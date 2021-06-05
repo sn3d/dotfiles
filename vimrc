@@ -37,6 +37,8 @@ set encoding=utf-8
 " Set the encoding of files written
 set fileencoding=utf-8
 
+set updatetime=750
+
 " Set tab to 3 spaces
 set tabstop=3
 set softtabstop=3
