@@ -12,14 +12,15 @@ Plug 'sn3d/sn3d.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()            " required
-" filetype plugin indent on    " required
+Plug 'ryanoasis/vim-devicons'
+call plug#end() 
 
 " -------------------------------------------------------
 " Editor settings
@@ -32,10 +33,10 @@ set visualbell
 set noerrorbells
 
 " Change how vim represents characters on the screen
-set encoding=utf-8
+set encoding=UTF-8
 
 " Set the encoding of files written
-set fileencoding=utf-8
+set fileencoding=UTF-8
 
 set updatetime=750
 
@@ -54,6 +55,13 @@ set guicursor=
 
 " Set leader to ',' it's required for shortcuts
 let mapleader = ","
+
+" set theme or airline (bottom line)
+let g:airline_theme="minimalist"
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 " -------------------------------------------------------
 " FZF setup
@@ -74,7 +82,7 @@ command! GoBuildMain execute 'GoBuild' s:find_git_root()
 let g:go_debug_windows = {
       \ 'vars':       'rightbelow 60vnew',
       \ 'stack':      'rightbelow 10new',
-      \ 'out':        'botright 8new',
+      \ 'out':        'botright 10new',
 \ }
 
 " show only OUT in output
@@ -88,6 +96,7 @@ let g:go_fmt_command = "goimports"
 
 " Enter automatically into the files directory
 autocmd BufEnter * silent! lcd %:p:h
+
 
 " -------------------------------------------------------
 " Shortcuts
@@ -124,11 +133,12 @@ autocmd BufEnter * silent! lcd %:p:h
 nnoremap <leader>q  :ProjectFiles<CR>
 nnoremap <leader>r  :Ag 
 nnoremap <leader>bb :Gblame<CR>
-nnoremap <leader>d  :GoDoc<CR>
 nnoremap <leader>s  :GoInfo<CR>
 nnoremap <leader>b  :GoBuildMain<CR>
 nnoremap <C-]> :GoDef<CR>
 nnoremap <C-[> :GoDefPop<CR>
+
+au FileType go nmap <leader>d <Plug>(go-doc-vertical)
 
 nnoremap <leader>1 :GoDebugStart<CR>
 nnoremap <leader>2 :GoDebugTestFunc<CR>
