@@ -20,6 +20,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
+Plug 'SirVer/ultisnips'
 call plug#end() 
 
 " -------------------------------------------------------
@@ -97,6 +98,11 @@ let g:go_fmt_command = "goimports"
 " Enter automatically into the files directory
 autocmd BufEnter * silent! lcd %:p:h
 
+" ------------------------------------------------------
+" UltiSnips
+"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/snippets']
+let g:UltiSnipsUsePythonVersion = 3
 
 " -------------------------------------------------------
 " Shortcuts
@@ -137,7 +143,6 @@ nnoremap <leader>s  :GoInfo<CR>
 nnoremap <leader>b  :GoBuildMain<CR>
 nnoremap <C-]> :GoDef<CR>
 nnoremap <C-[> :GoDefPop<CR>
-
 au FileType go nmap <leader>d <Plug>(go-doc-vertical)
 
 nnoremap <leader>1 :GoDebugStart<CR>
