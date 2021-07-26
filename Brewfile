@@ -1,4 +1,18 @@
+tap "homebrew/cask-fonts"
+
 brew "neovim"
+brew "kubectl"
+brew "kubectx"
+brew "python@3.9"
+brew "tmux"
+brew "go"
+brew "fzf"
+brew "jq"
+brew "terraform"
+brew "vault"
+brew "tfenv"
 
 cask "spotify"
-
+cask "miniconda"
+cask "google-cloud-sdk"
+cask "font-hack-nerd-font"
