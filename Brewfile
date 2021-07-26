@@ -11,6 +11,7 @@ brew "jq"
 brew "terraform"
 brew "vault"
 brew "tfenv"
+brew "the_silver_searcher"
 
 cask "spotify"
 cask "miniconda"
