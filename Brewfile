@@ -1,0 +1,4 @@
+brew "neovim"
+
+cask "spotify"
+
