@@ -3,3 +3,5 @@
 	name = Zdenko Vrabel
 [code]
 	editor = vim
+[url "git@github.com:"]
+	insteadOf = https://github.com/

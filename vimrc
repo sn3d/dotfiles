@@ -41,6 +41,8 @@ set fileencoding=UTF-8
 
 set updatetime=750
 
+set colorcolumn=80
+
 " Set tab to 3 spaces
 set tabstop=3
 set softtabstop=3
@@ -154,6 +156,9 @@ nnoremap <leader>6 :GoDebugNext<CR>
 nnoremap <leader>7 :GoDebugStep<CR>
 nnoremap <leader>8 :GoDebugStepOut<CR>
 nnoremap <leader>0 :GoDebugBreakpoint<CR>
+
+" golang command aliases
+command -nargs=1 Gp GoDebugPrint <args>
 
 " on iPad you don't have ESC. As a 
 " hack, I'm using 'jj' sequence. 
