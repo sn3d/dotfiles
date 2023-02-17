@@ -9,6 +9,8 @@ filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
 Plug 'sn3d/sn3d.vim'
+Plug 'Shougo/ddc.vim'
+Plug 'vim-denops/denops.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -120,7 +122,7 @@ let g:UltiSnipsUsePythonVersion = 3
 "    Ctrl+], Crtl+[ - go to definition and back
 "    ,b - Go build
 "    ,d - Go documentation 
-"    ,s - Go Info
+"    ,i - Go Info
 "    ,q - Open file (fuzzy find)
 "    ]] - next func.
 "    [[ - prev.func.
@@ -141,7 +143,7 @@ let g:UltiSnipsUsePythonVersion = 3
 nnoremap <leader>q  :ProjectFiles<CR>
 nnoremap <leader>r  :Ag 
 nnoremap <leader>bb :Gblame<CR>
-nnoremap <leader>s  :GoInfo<CR>
+nnoremap <leader>i  :GoInfo<CR>
 nnoremap <leader>b  :GoBuildMain<CR>
 nnoremap <C-]> :GoDef<CR>
 nnoremap <C-[> :GoDefPop<CR>
@@ -165,9 +167,10 @@ command -nargs=1 Gp GoDebugPrint <args>
 imap jj <Esc>
 
 " ',g' - enable/disable NEDRtree
-" ',d' - go to actual file in NERDTree
+" ',f' - go to actual file in NERDTree
 map <leader>g :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
+" autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
 
 let NERDTreeShowHidden=1
 
