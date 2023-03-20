@@ -52,6 +52,8 @@ set shiftwidth=3
 set expandtab
 set smartindent
 
+set clipboard+=unnamedplus
+
 " Enable mouse scrolling
 set mouse=a
 
@@ -123,7 +125,6 @@ let g:UltiSnipsUsePythonVersion = 3
 "    ,b - Go build
 "    ,d - Go documentation 
 "    ,i - Go Info
-"    ,q - Open file (fuzzy find)
 "    ]] - next func.
 "    [[ - prev.func.
 "
@@ -140,6 +141,7 @@ let g:UltiSnipsUsePythonVersion = 3
 "
 "   if you want to print variable, use the :GoDebugPring <var>
 " -------------------------------------------------------
+nnoremap <leader>z  :GoBuild system('git rev-parse --show-toplevel 2> /dev/null')<CR>
 nnoremap <leader>q  :ProjectFiles<CR>
 nnoremap <leader>r  :Ag 
 nnoremap <leader>bb :Gblame<CR>
