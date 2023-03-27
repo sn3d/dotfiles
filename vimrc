@@ -17,12 +17,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'SirVer/ultisnips'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 call plug#end() 
 
 " -------------------------------------------------------
@@ -160,6 +162,12 @@ nnoremap <leader>6 :GoDebugNext<CR>
 nnoremap <leader>7 :GoDebugStep<CR>
 nnoremap <leader>8 :GoDebugStepOut<CR>
 nnoremap <leader>0 :GoDebugBreakpoint<CR>
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " golang command aliases
 command -nargs=1 Gp GoDebugPrint <args>
