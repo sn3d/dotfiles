@@ -2,8 +2,6 @@
 	email = vrabel.zdenko@gmail.com
 	name = Zdenko Vrabel
 [code]
-	editor = vim
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+	editor = nvim
 [pull]
 	rebase = true

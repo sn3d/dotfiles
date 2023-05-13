@@ -177,9 +177,9 @@ command -nargs=1 Gp GoDebugPrint <args>
 imap jj <Esc>
 
 " ',g' - enable/disable NEDRtree
-" ',f' - go to actual file in NERDTree
+" ',fn' - go to actual file in NERDTree
 map <leader>g :NERDTreeToggle<CR>
-map <leader>f :NERDTreeFind<CR>
+map <leader>fn :NERDTreeFind<CR>
 " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
 
 let NERDTreeShowHidden=1
