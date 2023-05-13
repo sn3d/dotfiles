@@ -27,6 +27,7 @@ sync:
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux.conf ~/.tmux.conf
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
+	[ -f ~/.bash_aliases ] || ln -s $(PWD)/bash_aliases ~/.bash_aliases
 
 clean: 
 	rm -f ~/.vimrc
@@ -35,5 +36,6 @@ clean:
 	rm -r ~/.config/nvim/plug-config/coc.vim
 	rm -f ~/.tmux.conf
 	rm -f ~/.gitconfig
+	rm -f ~/.bash_aliases
 
 .PHONY: all clean sync install install-darwin install-linux install-tmux-tpm
