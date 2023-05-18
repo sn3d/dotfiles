@@ -109,7 +109,7 @@ autocmd BufEnter * silent! lcd %:p:h
 " ------------------------------------------------------
 " UltiSnips
 "
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/snippets']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/snippets', $HOME."/.dotfiles/nvim/snippets"]
 let g:UltiSnipsUsePythonVersion = 3
 
 " -------------------------------------------------------
