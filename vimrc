@@ -10,7 +10,7 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 Plug 'sn3d/sn3d.vim'
 Plug 'Shougo/ddc.vim'
-Plug 'vim-denops/denops.vim'
+"Plug 'vim-denops/denops.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -187,5 +187,5 @@ let NERDTreeShowHidden=1
 " set indent for YAMLs
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-source $HOME/.config/nvim/plug-config/coc.vim
+" source $HOME/.config/nvim/plug-config/coc.vim
 
