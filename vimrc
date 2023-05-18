@@ -19,12 +19,12 @@ Plug 'fatih/vim-go'
 Plug 'tpope/vim-fugitive'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'junegunn/fzf.vim'
-Plug 'hashivim/vim-terraform'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'hashivim/vim-terraform'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'SirVer/ultisnips'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+"Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 call plug#end() 
 
 " -------------------------------------------------------
