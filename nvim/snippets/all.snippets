@@ -18,7 +18,6 @@ snippet d11 "we have headers"
 #include <linux/bpf.h>
 #include <bpf/bpf_helpers.h>
 
-
 endsnippet
 
 snippet d12 "we have a entry point for program"
@@ -38,9 +37,6 @@ endsnippet
 snippet d15 "and license"
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
 endsnippet
- 
-
-
 
 
 
@@ -52,7 +48,7 @@ endsnippet
 snippet d22 "" 
 	// load my BPF program into kernel
 	objs := bpfObjects{}
-	err := loadBpfObjects(&objs, nil); err != nil 
+	err := loadBpfObjects(&objs, nil); 
 	if err != nil {
 		log.Fatalf("error loading BPF program: %s", err)
 	}
@@ -158,7 +154,7 @@ snippet d35 "we need headers"
 endsnippet
 
 
-snippet d36 "read the map"
+snippet d41 "read the map"
 func printMap(m *ebpf.Map) {
 	var srcIP []byte
 	var packetCount uint32
@@ -168,4 +164,8 @@ func printMap(m *ebpf.Map) {
 		fmt.Printf("%s = %d \n", net.IP(srcIP), packetCount)
 	}
 }
+endsnippet
+
+snippet d42 "call map reader"
+printMap(objs.KcdMap)
 endsnippet
